@@ -8,35 +8,49 @@ You need [TF2Classic-Tools by Scags](https://github.com/Scags/TF2Classic-Tools) 
 RTD and Goomba Stomp are at https://github.com/figman57/TF2CPorts
 
 ## Plugin list
-**allcrit**
+### allcrit
 100% crits
-**buttons**
+
+### buttons
 you can +use with LMB or RMB (for special maps), you still need `tf_allow_player_use 1`
-**capturebonus**
+
+### capturebonus
 crits or uber when capturing a point
-**facestab**
+
+### facestab
 knife always instakillz (troll spy)
-**fastrespawn**
+
+### fastrespawn
 for instant respawn, configurable respawn times for any 4 teams
-**locker_overheal**
+
+### locker_overheal
 touch the locker = full overheal
-**nailjump**
+
+### nailjump
 fly with the scout nail gun (look down)
-**needlejump**
+
+### needlejump
 fly with the medic syringe gun like in TF2Ware (look down)
-**playerclimb**
+
+### playerclimb
 climb walls with melee like HHH from VS Saxton Hale
-**tauntcrits2**
+
+### tauntcrits2
 taunt critz
-**tf2_4chan_quoter**
+
+### tf2_4chan_quoter
 `>`greentext (supports 4 teams)
-**tf2medkitdrop**
+
+### tf2medkitdrop
 players drop medkits on death like the candy cane, configurable size
-**tf2pyroairjump**
+
+### tf2pyroairjump
 fly with the pyro flamethrower airblast (look behind)
-**thirdperson**
+
+### thirdperson
 thirdperson camera, use the !tp and !fp commands
-**uberspawn**
+
+### uberspawn
 spawn protection
 
 ## Fun commands
