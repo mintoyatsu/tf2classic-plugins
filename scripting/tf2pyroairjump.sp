@@ -4,16 +4,16 @@
 #include <sdkhooks>
 #include <tf2c>
 #include <sdktools>
-#undef REQUIRE_PLUGIN
-#tryinclude <tf2pyroairjump>
-#define REQUIRE_PLUGIN
+//#undef REQUIRE_PLUGIN
+//#tryinclude <tf2pyroairjump>
+//#define REQUIRE_PLUGIN
 
 #define PLUGIN_VERSION "1.2.2"
 
 new Handle:sm_tf2paj_version = INVALID_HANDLE;
 new Handle:sm_tf2paj_enabled = INVALID_HANDLE;
 new Handle:sm_tf2paj_prethink = INVALID_HANDLE;
-new Handle:tf_flamethrower_burst_zvelocity = INVALID_HANDLE;
+//new Handle:tf_flamethrower_burst_zvelocity = INVALID_HANDLE;
 
 new bool:bPluginEnabled = true;
 new bool:bOnPreThink = false;
@@ -21,7 +21,7 @@ new Float:flZVelocity = 0.0;
 
 new Float:flNextSecondaryAttack[MAXPLAYERS+1];
 
-new Handle:fwOnPyroAirBlast = INVALID_HANDLE;
+//new Handle:fwOnPyroAirBlast = INVALID_HANDLE;
 
 public Plugin:myinfo = {
 	name = "[TF2] Pyro Airblast Jump",
@@ -31,11 +31,11 @@ public Plugin:myinfo = {
 	url = "http://xpenia.org/"
 }
 
-public APLRes:AskPluginLoad2(Handle:hMySelf, bool:bLate, String:strError[], iMaxErrors)
-{
-    RegPluginLibrary( "tf2pyroairjump" );
-    return APLRes_Success;
-}
+//public APLRes:AskPluginLoad2(Handle:hMySelf, bool:bLate, String:strError[], iMaxErrors)
+//{
+//    RegPluginLibrary( "tf2pyroairjump" );
+//    return APLRes_Success;
+//}
 
 public OnPluginStart()
 {
@@ -49,9 +49,9 @@ public OnPluginStart()
 	sm_tf2paj_prethink = CreateConVar("sm_tf2paj_prethink", "0", "Use OnPreThink instead of OnGameFrame?", FCVAR_PLUGIN|FCVAR_NOTIFY, true, 0.0, true, 1.0);
 	HookConVarChange(sm_tf2paj_prethink, OnConVarChanged);
 	
-	tf_flamethrower_burst_zvelocity = FindConVar( "tf_flamethrower_burst_zvelocity" );
+	//tf_flamethrower_burst_zvelocity = FindConVar( "tf_flamethrower_burst_zvelocity" );
 	
-	fwOnPyroAirBlast = CreateGlobalForward( "TF2_OnPyroAirBlast", ET_Event, Param_Cell );
+	//fwOnPyroAirBlast = CreateGlobalForward( "TF2_OnPyroAirBlast", ET_Event, Param_Cell );
 	
 	for( new i = 0; i <= MAXPLAYERS; i++ )
 	{
@@ -139,12 +139,12 @@ public OnPreThink( iClient )
 	//PrintToChat( iClient, "%0.1f", GetEntPropFloat( iWeapon, Prop_Send, "m_flNextSecondaryAttack" ) - flNextSecondaryAttack[iClient] );
 	//PrintToChat( iClient, "%0.1f %0.1f %0.1f", GetEntPropFloat( iWeapon, Prop_Send, "m_flNextSecondaryAttack" ), flNextSecondaryAttack[iClient], GetGameTime() );
 	
-	decl Action:result;
-	Call_StartForward( fwOnPyroAirBlast );
-	Call_PushCell( iClient );
-	Call_Finish( result );
-	if( result == Plugin_Handled || result == Plugin_Stop )
-		return;
+	//decl Action:result;
+	//Call_StartForward( fwOnPyroAirBlast );
+	//Call_PushCell( iClient );
+	//Call_Finish( result );
+	//if( result == Plugin_Handled || result == Plugin_Stop )
+	//	return;
 	
 	if( (GetEntityFlags(iClient) & FL_ONGROUND) == FL_ONGROUND )
 		return;
